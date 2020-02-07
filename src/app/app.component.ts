@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'gnm-root',
   template: `
-  <button class="btn btn-success">GELDIM</button>
+    <gnm-navigation-bar></gnm-navigation-bar>
     <router-outlet></router-outlet>
   `,
   styles: []
