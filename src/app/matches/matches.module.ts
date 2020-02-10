@@ -2,17 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatchesRoutingModule } from './matches-routing.module';
-import { ComponentsComponent } from './components/components.component';
-import { MatTableModule } from '@angular/material/table';
-import { TableComponent } from './components/table/table.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
-  declarations: [ComponentsComponent, TableComponent],
+  declarations: [],
   imports: [
     CommonModule,
     MatchesRoutingModule,
-    MatTableModule
+    SharedModule
   ]
 })
 export class MatchesModule { }
