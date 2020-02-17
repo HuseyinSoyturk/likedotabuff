@@ -4,9 +4,10 @@ import { Component } from '@angular/core';
   selector: 'gnm-root',
   template: `
     <gnm-navigation-bar></gnm-navigation-bar>
+    asdasndlans
     <router-outlet></router-outlet>
   `,
-  styles: []
+  styles: [],
 })
 export class AppComponent {
   title = 'DotaBuffForGnm';
