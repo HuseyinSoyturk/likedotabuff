@@ -8,17 +8,18 @@ import { NavigationBarModule } from './navigation-bar/navigation-bar.module';
 import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+import { appReducer } from './store/app.reducer';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, NavigationBarModule, HttpClientModule, StoreModule.forRoot(reducers, {
-      metaReducers,
-      runtimeChecks: {
-        strictStateImmutability: true,
-        strictActionImmutability: true
-      }
-    })],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NavigationBarModule,
+    HttpClientModule,
+    StoreModule.forRoot({ appReducer: appReducer }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

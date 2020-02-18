@@ -3,5 +3,6 @@
   class="ag-theme-balham-dark"
   [rowData]="rowData"
   [columnDefs]="columnDefs"
+  (firstDataRendered)="onFirstDataRendered($event)"
 >
 </ag-grid-angular>

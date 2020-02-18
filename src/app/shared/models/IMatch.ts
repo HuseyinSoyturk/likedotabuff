@@ -4,6 +4,7 @@ export interface IMatch {
   duration: number;
   game_mode: number;
   hero_id: number;
+  hero_name?: string;
   kills: number;
   leaver_status: number;
   lobby_type: number;
