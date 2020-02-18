@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { RequestService } from 'src/app/shared/services/request.service';
+import { IMatch } from 'src/app/shared/models/IMatch';
 
 @Component({
   selector: 'gnm-match-table',
@@ -7,18 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatchTableComponent implements OnInit {
   columnDefs = [
-    { headerName: 'Field', field: 'make', filter: true, sortable: true },
-    { field: 'model' },
-    { field: 'price' },
+    { headerName: 'Mac Id', field: 'match_id' },
+    { headerName: 'Hero', field: 'hero_id', filter: true, sortable: true },
+    { headerName: 'Kill', field: 'kills', filter: true, sortable: true },
+    { headerName: 'Asist', field: 'assists', filter: true, sortable: true },
+    { headerName: 'Olum', field: 'deaths', filter: true, sortable: true },
+    { headerName: 'Mac Sonucu', field: 'radiant_win', filter: true, sortable: true },
   ];
 
-  rowData = [
-    { make: 'Toyota', model: 'Celica', price: 35000 },
-    { make: 'Ford', model: 'Mondeo', price: 32000 },
-    { make: 'Porsche', model: 'Boxter', price: 72000 },
-  ];
+  rowData: IMatch[];
 
-  constructor() {}
+  constructor(private requestService: RequestService) {}
 
+  ngAfterViewInit(): void {
+    this.requestService.getMatchList().subscribe(response => {
+      this.rowData = response;
+    });
+  }
   ngOnInit(): void {}
 }
