@@ -15,4 +15,7 @@ export interface IMatch {
   skill: number;
   start_time: number;
   version: number;
+  match_result?: 'Galibiyet' | 'Yenilgi';
+  match_duration?: string;
+  match_date?: string;
 }
