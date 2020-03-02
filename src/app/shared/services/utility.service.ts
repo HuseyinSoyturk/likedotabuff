@@ -11,7 +11,8 @@ export class UtilityService {
   }
 
   secondToMin(seconds) {
-    let second = seconds % 60;
+    let second = (seconds % 60).toString();
+    second =  second.length === 1 ? '0' + second : second
     let minute = Math.trunc(seconds / 60);
     return minute + ':' + second;
   }

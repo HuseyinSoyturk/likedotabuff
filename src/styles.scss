@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
-@import '~ag-grid-community/dist/styles/ag-grid.css';
-@import '~ag-grid-community/dist/styles/ag-theme-balham.css';
-@import '~ag-grid-community/dist/styles/ag-theme-balham-dark.css';
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import "@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham-dark.css";
 
 html,
 body {
@@ -13,5 +13,22 @@ body {
   margin: 0;
   background-color: #352f2f;
   color: white;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.justify-around {
+  justify-content: space-around;
 }

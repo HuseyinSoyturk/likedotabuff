@@ -4,6 +4,7 @@ import { IMatch } from '../models/IMatch';
 import { Observable } from 'rxjs';
 import { IHero } from '../models/IHero';
 import { IWordCloud } from '../models/IWordCloud';
+import { IMatchModalData } from '../models/IModalDataModels';
 
 @Injectable({
   providedIn: 'root',
@@ -23,7 +24,7 @@ export class RequestService {
     return this.httpClient.get<IWordCloud>('https://api.opendota.com/api/players/168242047/wordcloud');
   }
 
-  getMatchInfo(match_id) {
-    return this.httpClient.get('https://api.opendota.com/api/matches/' + match_id);
+  getMatchInfo(match_id): Observable<IMatchModalData>  {
+    return this.httpClient.get<IMatchModalData>('https://api.opendota.com/api/matches/' + match_id);
   }
 }
