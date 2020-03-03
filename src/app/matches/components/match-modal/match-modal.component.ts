@@ -2,7 +2,7 @@ import { Component, Inject } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { RequestService } from "src/app/shared/services/request.service";
 import { IMatchModalData } from "src/app/shared/models/IModalDataModels";
-import { UtilityService } from 'src/app/shared/services/utility.service';
+import { UtilityService } from "src/app/shared/services/utility.service";
 
 @Component({
   selector: "gnm-match-modal",
@@ -20,15 +20,18 @@ export class MatchModalComponent {
   matchData: IMatchModalData;
   winningTeam: "Radiant" | "Dire";
   pageLoaded: boolean = false;
-  matchDuration : string
+  matchDuration: string;
+  firstBloodTime: string;
 
   ngAfterViewInit(): void {
     this.requestService.getMatchInfo(this.match_id).subscribe(response => {
       this.matchData = response;
       this.winningTeam = response.radiant_win ? "Radiant" : "Dire";
-      this.matchDuration = this.utilityService.secondToMin(response.duration)
+      this.matchDuration = this.utilityService.secondToMin(response.duration);
+      this.firstBloodTime = this.utilityService.secondToMin(
+        response.first_blood_time
+      );
       this.pageLoaded = true;
-
     });
   }
 }
