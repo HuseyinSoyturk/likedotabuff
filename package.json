@@ -39,7 +39,7 @@
     "@angular/compiler-cli": "~9.0.0-rc.3",
     "@angular/language-service": "~9.0.0-rc.3",
     "@types/node": "^12.11.1",
-    "electron": "^7.1.11",
+    "electron": "^11.5.0",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "~3.6.4"
